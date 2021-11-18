@@ -1,0 +1,5 @@
+declare namespace API {
+	{% for component in componentsJson %}
+		type {{component.typeName}} = {{component.type}};
+	{% endfor %}
+}

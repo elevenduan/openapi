@@ -1,0 +1,9 @@
+import { Request, Response } from 'express';
+
+export default {
+  '{{api.method}} {{api.url}}': (req: Request, res: Response) => {
+    res
+      .status(200)
+      .send({{api.response.mock}});
+  }
+};

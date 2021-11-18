@@ -1,11 +1,4 @@
-# openapi
-
-唯一 openapi 规范说明，生成 service、mock、typings 文件。
-
-## 默认配置
-
-```配置说明
-const defaultConfig = {
+module.exports = {
   // import service方法，默认axios
   importRequest: "import request from 'axios';",
   // import hook方法，默认ahooks useRequest。仅isHook为true时生效。
@@ -23,19 +16,3 @@ const defaultConfig = {
   // 是否生成hook方法
   isHook: true,
 };
-```
-
-## 使用方式
-
-- `npm install @bigflower/openapi --save-dev`
-- 项目文件 package.json > scripts，添加`"openapi": "openapi"`
-- 终端执行`npm run openapi init`，生成/openapi/openapi.config.js、/openapi/openapi.json
-  - 切勿重复执行，会覆盖之前已有文件
-  - config.js 文件修改配置，json 文件修改 api 文档
-- 终端执行`npm run openapi`，根据配置和文档，生成 service、mock 文件
-
-## 参考文档
-
-- [OpenAPI Guide](https://swagger.io/docs/specification/about/)
-- [Axios Request Config](https://axios-http.com/docs/req_config)
-- [ahooks useRequest Config](https://ahooks.js.org/hooks/async#basic-api)

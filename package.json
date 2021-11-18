@@ -1,0 +1,36 @@
+{
+  "name": "@bigflower/openapi",
+  "version": "1.0.0",
+  "description": "唯一openapi规范说明，生成service、mock、types文件。",
+  "main": "lib/index.js",
+  "files": [
+    "lib",
+    "bin"
+  ],
+  "bin": {
+    "openapi": "bin/openapi.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "openapi",
+    "mock",
+    "request",
+    "typings",
+    "service",
+    "react-component"
+  ],
+  "author": "bigflower",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "nunjucks": "^3.2.3",
+    "openapi-sampler": "^1.1.0",
+    "glob": "^7.2.0",
+    "rimraf": "^3.0.2",
+    "prettier": "^2.4.1",
+    "@apidevtools/swagger-parser": "^10.0.3"
+  },
+  "devDependencies": {}
+}
