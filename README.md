@@ -39,3 +39,5 @@ const defaultConfig = {
 - [OpenAPI Guide](https://swagger.io/docs/specification/about/)
 - [Axios Request Config](https://axios-http.com/docs/req_config)
 - [ahooks useRequest Config](https://ahooks.js.org/hooks/async#basic-api)
+- [Faker Api Methods](https://github.com/Marak/Faker.js#api-methods)
+- [Mock Wiki](https://github.com/nuysoft/Mock/wiki)
