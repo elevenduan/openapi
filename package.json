@@ -1,6 +1,6 @@
 {
   "name": "@bigflower/openapi",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "唯一openapi规范说明，生成service、mock、types文件。",
   "main": "lib/index.js",
   "files": [
@@ -9,9 +9,6 @@
   ],
   "bin": {
     "openapi": "bin/openapi.js"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "openapi",
@@ -23,6 +20,14 @@
   ],
   "author": "bigflower",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/elevenduan/openapi"
+  },
+  "homepage": "https://github.com/elevenduan/openapi",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "dependencies": {
     "@apidevtools/swagger-parser": "^10.0.3",
     "faker": "^5.5.3",

@@ -5,7 +5,7 @@
 ## 默认配置
 
 ```配置说明
-const defaultConfig = {
+module.exports = {
   // import service方法，默认axios
   importRequest: "import request from 'axios';",
   // import hook方法，默认ahooks useRequest。仅isHook为true时生效。
@@ -33,6 +33,7 @@ const defaultConfig = {
   - 切勿重复执行，会覆盖之前已有文件
   - config.js 文件修改配置，json 文件修改 api 文档
 - 终端执行`npm run openapi`，根据配置和文档，生成 service、mock 文件
+- 添加[VS Code Extension](https://marketplace.visualstudio.com/items?itemName=42Crunch.vscode-openapi)，预览编辑 openapi.json
 
 ## 参考文档
 
@@ -41,3 +42,73 @@ const defaultConfig = {
 - [ahooks useRequest Config](https://ahooks.js.org/hooks/async#basic-api)
 - [Faker Api Methods](https://github.com/Marak/Faker.js#api-methods)
 - [Mock Wiki](https://github.com/nuysoft/Mock/wiki)
+
+## 数据样例
+
+```api json
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "example": 10
+    },
+    "shipDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "status": {
+      "type": "string",
+      "example": "approved",
+      "enum": ["placed", "approved", "delivered"]
+    },
+    "complete": {
+      "type": "boolean"
+    },
+    "list": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "minItems": 1,
+        "maxItems": 3
+      },
+      "minItems": 1,
+      "maxItems": 2
+    },
+    "uuid": {
+      "type": "string",
+      "x-faker": "datatype.uuid"
+    },
+    "city": {
+      "type": "string",
+      "x-mock": "Random.city"
+    },
+    "url": {
+      "type": "string",
+      "x-mock": {
+        "Random.url": "http"
+      }
+    }
+  }
+}
+```
+
+```api mock
+{
+  "uuid": "52b31f6f-0fd5-474d-bf95-94c6ffeb56cc",
+  "shipDate": "1947-12-06T16:00:00.0Z",
+  "url": "http://mrbae.kr/piwhseneh",
+  "complete": false,
+  "list": [
+    ["cillum incididunt ad proident", "Ut", "aute tempor aliqua ut"],
+    ["fugiat reprehenderit", "nostrud", "dolor"]
+  ],
+  "status": "approved",
+  "id": 10,
+  "city": "宜春市"
+}
+```
