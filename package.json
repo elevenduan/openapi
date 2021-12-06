@@ -1,7 +1,7 @@
 {
   "name": "@bigflower/openapi",
-  "version": "1.2.1",
-  "description": "唯一openapi规范说明，生成service、mock、types文件。",
+  "version": "1.2.2",
+  "description": "唯一 openapi 规范说明，生成 services、mocks、typings 文件。",
   "main": "lib/index.js",
   "files": [
     "lib",

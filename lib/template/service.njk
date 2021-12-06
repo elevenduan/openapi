@@ -1,6 +1,5 @@
 import merge from "lodash/merge";
-{{ importRequest }}
-{% if isHook %}{{ importUseRequest }}{% endif %}
+{{ importStatement }}
 
 type Config = {[key: string]: any};
 
@@ -14,11 +13,11 @@ function mergeHookConfig(...config: Config[]) {
 
 {% for api in apiJson %}
 	/** {{ api.description }} {{ api.method | upper }} {{ api.url | safe }} */
-    export async function {{ api.name }} (
+    export function {{ api.name }} (
 		{% if api.params %}params: { {{api.params | join(";", "type") }} },{% endif %}
 		{% if api.data %}data: {{api.data.type}},{% endif %}
 		reqConfig?: Config
-    ) {
+    ): Response<{{ api.response.type }}> {
 		return request({
 			url: "{{api.url}}",
 			method: "{{api.method}}",
