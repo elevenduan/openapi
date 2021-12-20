@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 const path = require('path');
-const {generateFile, generateConfigFile} = require('../lib');
+const { generateFile, generateConfigFile } = require('../lib');
 
 function run() {
   const [runType, fileDir = 'openapi'] = process.argv.slice(2);
